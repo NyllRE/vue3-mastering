@@ -25,6 +25,7 @@ const { t } = useI18n()
         Vitesse
       </a>
     </p>
+    <p>{{ t('button.toggle_langs') }}</p>
     <p>
       <em text-sm opacity-75>{{ t("intro.desc") }}</em>
     </p>
