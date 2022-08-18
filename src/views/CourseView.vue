@@ -1,31 +1,30 @@
-<style>
+<style scoped>
 @media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
+  .container {
     align-items: center;
   }
 }
 
-li {
-  list-style-type: none;
-}
 </style>
 
 <template lang="pug">
 
-.about
-  h1 This is the Resource Project's index page
+.container 
+  ul
+    ResourceItem(
+      v-for='source in storedResources'
+      :key="source.id"
+      :source="source")
 
-ul
-  li(v-for='source in storedResources' :key="source.id")
-    h1 {{ source.title }}
-    p {{ source.description }}
-    a( :href="source.link" ) {{ source.link }}
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import ResourceItem from '../components/course/ResourceItem.vue'
+import { useVariableStore } from '@/stores/vars'
+
+const store = useVariableStore()
+store.change('Resources Project - Vue Course')
 
 const storedResources = ref([
   {
@@ -37,8 +36,8 @@ const storedResources = ref([
   {
     id: 'official-guide',
     title: 'Official NuxtJS Guide',
-    description: 'The official Vue.js Documentation',
-    link: 'https://vuejs.org'
+    description: 'The official Nuxt.js Documentation',
+    link: 'https://nuxtjs.org'
   }
 ])
 

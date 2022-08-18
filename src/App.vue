@@ -1,80 +1,43 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import TheHeader from './components/UI/TheHeader.vue'
+import TheTransition from './components/UI/TheTransition.vue';
+
 </script>
 
+
 <template lang="pug">
-header
-
-	.wrapper
-
-	nav
-		RouterLink( to="/help" ) help
-		RouterLink( to="/course" ) Course 
 
 
-RouterView
+TheHeader
+routerView( v-slot="{ Component }" )
+  transition( name='slide-fade' mode='out-in' )
+    component( :is="Component" )
+
+
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style lang="scss">
+
+.slot-holder {
+   width: 40vw;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.slide-fade-enter-active {
+   transition: 0.3s;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.slide-fade-leave-active {
+   transition: 0.3s;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.slide-fade-leave-to {
+   transform: translateX(20px);
+   opacity: 0;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 2px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+.slide-fade-enter-from {
+  transform: translateX(-20px);
+    opacity: 0;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
