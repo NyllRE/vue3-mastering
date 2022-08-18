@@ -1,14 +1,46 @@
-<style></style>
+<style scoped lang="scss">
+li {
+   list-style-type: none;
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+
+   .details {
+      float: left;
+
+      a.view {
+         color: rgb(251, 255, 0);
+      }
+   }
+   .btn {
+      float: right;
+   }
+}
+
+
+</style>
 
 <template lang="pug">
 
-li(v-for='source in storedResources' :key="source.id")
-   h1 {{ source.title }}
-   p {{ source.description }}
-   a( :href="source.link" ) {{ source.link }}
+li
+   BaseCard
+      .details
+         h3 {{ source.title }}
+         p {{ source.description }}
+         a( :href="source.link" ) {{ source.link }}
+         br
+         a.view( :href="'#'" ) View Resource 
+
+      BaseButton.btn( mode="light-red" ) Delete
 
 </template>
 
-<script>
+<script lang="ts" setup>
+import { provide, ref } from 'vue'
+
+const props = defineProps(['source'])
+const title = ref(props.source.title)
+provide('title', title)
+
 
 </script>
