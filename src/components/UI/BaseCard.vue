@@ -15,4 +15,6 @@
 
 <script>
 // vscode didn't count any of my commits, I'm never relying on vscode with git stuff again
+
+// I did it again
 </script>
