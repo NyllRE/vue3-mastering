@@ -1,7 +1,20 @@
-<style scoped>
+<style scoped lang="scss">
 @media (min-width: 1024px) {
   .container {
     align-items: center;
+  }
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  li {
+    list-style-type: none;
+    
+    .plus {
+      font-size: 2em;
+    }
   }
 }
 
@@ -11,6 +24,9 @@
 
 .container 
   ul
+    li
+      BaseCard( style='text-align: center; width: 50%' )
+        .plus +
     ResourceItem(
       v-for='source in storedResources'
       :key="source.id"
@@ -22,6 +38,7 @@
 import { ref } from 'vue'
 import ResourceItem from '../components/course/ResourceItem.vue'
 import { useVariableStore } from '@/stores/vars'
+import BaseCard from '../components/UI/BaseCard.vue'
 
 const store = useVariableStore()
 store.change('Resources Project - Vue Course')
