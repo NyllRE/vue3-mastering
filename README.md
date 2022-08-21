@@ -1,6 +1,9 @@
 # vue3-mastering
 
-This template should help get you started developing with Vue 3 in Vite.
+- [ ] learn Vitest and use it to make tests
+- [ ] finish the `resources project` from the [udemy course](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
+- [ ] learn pinia
+- [ ] learn how to implement authentication
 
 ## Recommended IDE Setup
 
