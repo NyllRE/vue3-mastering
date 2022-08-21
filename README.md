@@ -4,6 +4,7 @@
 - [ ] finish the `resources project` from the [udemy course](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
 - [ ] learn pinia
 - [ ] learn how to implement authentication
+- [ ] fix light mode contrast ratio
 
 ## Recommended IDE Setup
 
