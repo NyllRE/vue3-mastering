@@ -14,18 +14,36 @@ ul {
     
     .plus {
       font-size: 2em;
+
     }
   }
 }
 
+.center {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+  transition: .2s;
+}
+
+.card {
+  transition: .2s;
+  transform: scale(.8);
+}
+.card:hover {
+  background: rgb(133, 133, 133);
+  border: 0px solid #0000;
+    transform: scale(.9);
+  color: black
+}
 </style>
 
 <template lang="pug">
 
 .container 
   ul
-    li
-      BaseCard( style='text-align: center; width: 50%' )
+    li.center
+      BaseCard.card
         .plus +
     ResourceItem(
       v-for='source in storedResources'
@@ -38,7 +56,6 @@ ul {
 import { ref } from 'vue'
 import ResourceItem from '../components/course/ResourceItem.vue'
 import { useVariableStore } from '@/stores/vars'
-import BaseCard from '../components/UI/BaseCard.vue'
 
 const store = useVariableStore()
 store.change('Resources Project - Vue Course')
