@@ -18,8 +18,10 @@ routerView( v-slot="{ Component }" )
 
 <style lang="scss">
 
-.slot-holder {
-   width: 40vw;
+@media (min-width: 1024px) {
+   .slot-holder {
+      width: 40vw;
+   }
 }
 
 .slide-fade-enter-active {
