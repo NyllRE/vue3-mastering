@@ -1,15 +1,22 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
+import BaseButton from './BaseButton.vue'
 
-const props: any = defineProps(['visibility'])
+const props: any = defineProps(['title', 'description'])
 
 </script>
 
 
 <template lang="pug">
 
-transition( name="slide-fade" )
-   .prompt( v-if="visibility" )
-      slot
+//- Teleport( to='body' )
+
+.prompt
+   BaseButton.btn( mode="light-red" @click="$emit('clicked')" ) X
+   .base-data
+      h1 {{ title }}
+      p {{ description }}
+   slot
 
 </template>
 
@@ -30,6 +37,15 @@ transition( name="slide-fade" )
 
    width: 70%;
    height: 70%;
+
+   .btn {
+      float: right
+   }
+
+   .base-data {
+      width: 90%
+   }
 }
+
 
 </style>

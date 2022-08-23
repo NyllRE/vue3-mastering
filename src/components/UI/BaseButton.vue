@@ -32,13 +32,13 @@ button {
 
 <template lang="pug">
 
-button( :type="type" :class="mode" )
+button( :class="mode" )
    slot
 
 </template>
 
 <script lang="ts" setup>
 
-const props = defineProps(['type', 'mode'])
+const props = defineProps(['mode'])
 
 </script>

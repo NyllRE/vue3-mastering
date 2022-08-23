@@ -46,7 +46,14 @@ const togglePrompt = () => {
       :key="source.id"
       :source="source")
 
-  BasePrompt.prompt( :visibility="prompt" @click="togglePrompt" ) hai lol
+  transition( name="size-fade" )
+    component.prompt(
+      :is="BasePrompt"
+      v-if="prompt"
+      @clicked="togglePrompt"
+      title="e3"
+      description="e3"
+    ) hai lol
 
 </template>
 
@@ -69,7 +76,6 @@ ul {
     
     .plus {
       font-size: 2em;
-
     }
   }
 }
@@ -80,7 +86,6 @@ ul {
   width: 50%;
   transition: .2s;
 }
-
 .card {
   transition: .2s;
   transform: scale(.8);
@@ -88,9 +93,24 @@ ul {
 .card:hover {
   background: rgb(133, 133, 133);
   border: 0px solid #0000;
-    transform: scale(.9);
-  color: black
+  color: black;
 }
 
+.size-fade-enter-active {
+  transition: 0.3s;
+}
 
+.size-fade-leave-active {
+  transition: 0.3s;
+}
+
+.size-fade-leave-to {
+  transform: translate(-50%, -50%) scale(.8);
+  opacity: 0;
+}
+
+.size-fade-enter-from {
+  transform: translate(-50%, -50%) scale(.8);
+  opacity: 0;
+}
 </style>

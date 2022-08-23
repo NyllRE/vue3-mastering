@@ -39,6 +39,6 @@ routerView( v-slot="{ Component }" )
 
 .slide-fade-enter-from {
   transform: translateX(-20px);
-    opacity: 0;
-  }
+   opacity: 0;
+}
 </style>
