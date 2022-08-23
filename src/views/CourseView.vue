@@ -5,6 +5,7 @@ import { ref } from 'vue'
 import ResourceItem from '#/course/ResourceItem.vue'
 import BasePrompt from '#/UI/BasePrompt.vue'
 import { useVariableStore } from '@/stores/vars'
+import ResourceCard from '../components/course/ResourceCard.vue'
 
 
 useVariableStore().change('Resources Project - Vue Course')
@@ -47,21 +48,9 @@ const togglePrompt = () => {
       :source="source")
 
   transition( name="size-fade" )
-    component.prompt(
-      :is="BasePrompt"
-      v-if="prompt"
-      @clicked="togglePrompt"
-
-    )
-      template( #headers )
-        h1 Add a new Resource
-        br
-        hr
-      
-      p content
+    component( :is="ResourceCard" v-if="prompt" @togglePrompt="togglePrompt")
 
 </template>
-
 
 
 
@@ -100,6 +89,7 @@ ul {
   border: 1px solid #0000;
   color: black;
 }
+
 
 .size-fade-enter-active {
   transition: 0.3s;
