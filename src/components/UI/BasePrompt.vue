@@ -1,15 +1,12 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
 import BaseButton from './BaseButton.vue'
 
-// const props: any = defineProps(['title', 'description'])
 
 </script>
 
 
 <template lang="pug">
 
-//- Teleport( to='body' )
 
 .prompt
    BaseButton.btn( mode="light-red" @click="$emit('clicked')" ) X
@@ -39,13 +36,15 @@ import BaseButton from './BaseButton.vue'
 
    width: 100%;
    height: 100%;
+   overflow: scroll;
 
    .btn {
       float: right
    }
 
    .base-data {
-      width: 90%
+      width: 90%;
+      position: sticky; 
    }
 }
 
