@@ -51,9 +51,14 @@ const togglePrompt = () => {
       :is="BasePrompt"
       v-if="prompt"
       @clicked="togglePrompt"
-      title="e3"
-      description="e3"
-    ) hai lol
+
+    )
+      template( #headers )
+        h1 Add a new Resource
+        br
+        hr
+      
+      p content
 
 </template>
 
@@ -92,7 +97,7 @@ ul {
 }
 .card:hover {
   background: rgb(133, 133, 133);
-  border: 0px solid #0000;
+  border: 1px solid #0000;
   color: black;
 }
 

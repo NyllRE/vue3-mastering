@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import BaseButton from './BaseButton.vue'
 
-const props: any = defineProps(['title', 'description'])
+// const props: any = defineProps(['title', 'description'])
 
 </script>
 
@@ -14,9 +14,11 @@ const props: any = defineProps(['title', 'description'])
 .prompt
    BaseButton.btn( mode="light-red" @click="$emit('clicked')" ) X
    .base-data
-      h1 {{ title }}
-      p {{ description }}
+      slot( name='headers' )
+         i please add your headers
+   
    slot
+      i please add your content
 
 </template>
 
