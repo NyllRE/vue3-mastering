@@ -29,7 +29,7 @@ import BaseButton from './BaseButton.vue'
    background: var(--color-background);
    box-shadow: 0 0 20em 2em #000;
 
-   border-radius: 2em;
+   border-radius: 0em;
    padding: 2em;
 
    position: fixed;
@@ -37,8 +37,8 @@ import BaseButton from './BaseButton.vue'
    left: 50%;
    transform: translate(-50%, -50%);
 
-   width: 70%;
-   height: 70%;
+   width: 100%;
+   height: 100%;
 
    .btn {
       float: right
@@ -49,5 +49,12 @@ import BaseButton from './BaseButton.vue'
    }
 }
 
+@media (min-width: 1024px) {
+   .prompt {
+      width: 70%;
+      height: 70%;
+      border-radius: 2em;
+   }
+}
 
 </style>
