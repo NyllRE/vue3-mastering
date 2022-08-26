@@ -31,6 +31,7 @@ li
          br
          a.view( :href="'#'" ) View Resource 
 
+
       BaseButton.btn( mode="light-red" ) Delete
 
 </template>

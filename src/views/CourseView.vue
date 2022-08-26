@@ -3,14 +3,17 @@
 
 import { ref } from 'vue'
 import ResourceItem from '#/course/ResourceItem.vue'
-import BasePrompt from '#/UI/BasePrompt.vue'
 import { useVariableStore } from '@/stores/vars'
-import ResourceCard from '../components/course/ResourceCard.vue'
+import ResourcePrompt from '#/course/ResourcePrompt.vue'
 
 
 useVariableStore().change('Resources Project - Vue Course')
 
-const storedResources = ref([
+// const storedResources = resourcesStore()
+// const resources = ref(storedResources.get)
+// console.log(storedResources.get);
+
+const resources = ref([
   {
     id: 'vue',
     title: 'Vue Guide',
@@ -27,8 +30,20 @@ const storedResources = ref([
 
 const prompt = ref(false)
 
+
 const togglePrompt = () => {
   prompt.value = !prompt.value
+}
+
+const addResource = (data: object) => {
+  togglePrompt()
+  resources.value.push({
+    id: data.name,
+    title: data.name,
+    description: data.description,
+    link: data.url
+  })
+  
 }
 
 </script>
@@ -42,13 +57,20 @@ const togglePrompt = () => {
     li.center
       BaseCard.card( @click="togglePrompt" )
         .plus +
-    ResourceItem(
-      v-for='source in storedResources'
-      :key="source.id"
-      :source="source")
+    TransitionGroup( name="slide-fade-right" )
+      component(
+        :is="ResourceItem"
+        v-for='source in resources'
+        :key="source.id"
+        :source="source")
 
-  transition( name="size-fade" )
-    component( :is="ResourceCard" v-if="prompt" @togglePrompt="togglePrompt")
+  Transition( name="size-fade" )
+    component(
+      :is="ResourcePrompt"
+      v-if="prompt"
+      @togglePrompt="togglePrompt"
+      @addedResource="addResource"
+    )
 
 </template>
 
@@ -64,12 +86,20 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 65vh;
+  overflow: scroll;
 
   li {
     list-style-type: none;
     
-    .plus {
-      font-size: 2em;
+    .card {
+      // position: fixed;
+      // width: 13em;
+      // top: 2em;
+
+      .plus {
+        font-size: 2em;
+      }
     }
   }
 }
@@ -91,11 +121,7 @@ ul {
 }
 
 
-.size-fade-enter-active {
-  transition: 0.3s;
-}
-
-.size-fade-leave-active {
+.size-fade-leave-active, .size-fade-enter-active {
   transition: 0.3s;
 }
 
@@ -106,6 +132,22 @@ ul {
 
 .size-fade-enter-from {
   transform: translate(-50%, -50%) scale(.8);
+  opacity: 0;
+}
+
+
+
+.slide-fade-right-leave-active, .slide-fade-right-enter-active {
+  transition: 0.5s;
+}
+
+.slide-fade-right-leave-to {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.slide-fade-right-enter-from {
+  transform: translateX(30px);
   opacity: 0;
 }
 </style>

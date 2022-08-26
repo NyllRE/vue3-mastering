@@ -10,19 +10,17 @@ import './assets/main.css'
 import '@formkit/themes/genesis'
 
 // Components
-import BaseCard from './components/UI/BaseCard.vue'
-// import BaseTransition from './components/UI/BaseTransition.vue'
-import BaseButton from './components/UI/BaseButton.vue'
+import BaseCard from '#/UI/BaseCard.vue'
+import BaseButton from '#/UI/BaseButton.vue'
 
 createApp(App)
-   
    .use(createPinia())
    .use(router)
    .use(plugin, defaultConfig({
       plugins: [
          createAutoAnimatePlugin({
             duration: 100,
-            easing: "ease-in-out"
+            easing: "ease-in"
          })
       ]
    }) )

@@ -14,8 +14,9 @@ import BaseButton from './BaseButton.vue'
       slot( name='headers' )
          i please add your headers
    
-   slot
-      i please add your content
+   .content
+      slot
+         i please add your content
 
 </template>
 
@@ -36,7 +37,7 @@ import BaseButton from './BaseButton.vue'
 
    width: 100%;
    height: 100%;
-   overflow: scroll;
+   // overflow: scroll;
 
    .btn {
       float: right
@@ -44,7 +45,13 @@ import BaseButton from './BaseButton.vue'
 
    .base-data {
       width: 90%;
+      height: 30%;
       position: sticky; 
+   }
+
+   .content {
+      overflow: scroll;
+      height: 70%;
    }
 }
 
