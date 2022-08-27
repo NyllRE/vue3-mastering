@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const resourcesStore: Obj = defineStore({
+export const resourcesStore = defineStore({
    id: 'resources',
    state: () => {
       return {
@@ -23,11 +23,11 @@ export const resourcesStore: Obj = defineStore({
    getters: {
       get: (state) => state.list
    },
-   actions: {
-      add(value: object) {
-         this.list += value
-      }
-   }
+   // actions: {
+   //    add(value: object) {
+   //       this.list += value
+   //    }
+   // }
 })
 
 

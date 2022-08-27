@@ -35,7 +35,7 @@ const togglePrompt = () => {
   prompt.value = !prompt.value
 }
 
-const addResource = (data: object) => {
+const addResource = (data: formData) => {
   togglePrompt()
   resources.value.push({
     id: data.name,
@@ -43,7 +43,12 @@ const addResource = (data: object) => {
     description: data.description,
     link: data.url
   })
-  
+}
+
+interface formData {
+  name: string,
+  description: string,
+  url: string
 }
 
 </script>
@@ -57,12 +62,14 @@ const addResource = (data: object) => {
     li.center
       BaseCard.card( @click="togglePrompt" )
         .plus +
+
     TransitionGroup( name="slide-fade-right" )
       component(
         :is="ResourceItem"
         v-for='source in resources'
         :key="source.id"
         :source="source")
+
 
   Transition( name="size-fade" )
     component(
@@ -92,33 +99,30 @@ ul {
   li {
     list-style-type: none;
     
-    .card {
-      // position: fixed;
-      // width: 13em;
-      // top: 2em;
+    .center {
+      margin: 0 auto;
+      text-align: center;
+      width: 50%;
+      transition: .2s;
 
-      .plus {
-        font-size: 2em;
+      .card {
+        transition: .2s;
+        transform: scale(.8);
+
+        &:hover {
+          background: rgb(133, 133, 133);
+          border: 1px solid #0000;
+          color: black;
+        }
+
+        .plus {
+          font-size: 2em;
+        }
       }
     }
   }
 }
 
-.center {
-  margin: 0 auto;
-  text-align: center;
-  width: 50%;
-  transition: .2s;
-}
-.card {
-  transition: .2s;
-  transform: scale(.8);
-}
-.card:hover {
-  background: rgb(133, 133, 133);
-  border: 1px solid #0000;
-  color: black;
-}
 
 
 .size-fade-leave-active, .size-fade-enter-active {
