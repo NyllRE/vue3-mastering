@@ -1,7 +1,7 @@
 <template lang="pug">
 
-learning-survey( @survey-submit="storeSurvey" )
-user-experiences( :results="savedSurveyResults" )
+learning-survey
+user-experiences
 
 
 </template>
@@ -14,22 +14,6 @@ export default {
   components: {
     LearningSurvey,
     UserExperiences,
-  },
-  data() {
-    return {
-      savedSurveyResults: [],
-    };
-  },
-  methods: {
-    storeSurvey(surveyData) {
-      const surveyResult = {
-        name: surveyData.userName,
-        rating: surveyData.rating,
-        id: new Date().toISOString(),
-      };
-      this.savedSurveyResults.push(surveyResult);
-      console.log(surveyResult);
-    },
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template lang="pug">
-  
+
 section
-  basecard
+  BaseCard
     h2 How was you learning experience?
     form(@submit.prevent='submitSurvey')
       .form-control
@@ -19,11 +19,12 @@ section
         label(for='rating-great') Great
       p(v-if='invalidInput') One or more input fields are invalid. Please check your provided data.
       div
-        basebutton Submit
+        BaseButton Submit
 
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -32,7 +33,6 @@ export default {
       invalidInput: false,
     };
   },
-  emits: ['survey-submit'],
   methods: {
     submitSurvey() {
       if (this.enteredName === '' || !this.chosenRating) {
@@ -41,10 +41,12 @@ export default {
       }
       this.invalidInput = false;
 
-      this.$emit('survey-submit', {
-        userName: this.enteredName,
+
+      axios.post('https://basic-testing-backend-default-rtdb.europe-west1.firebasedatabase.app/surveys.json', {
+        name: this.enteredName,
         rating: this.chosenRating,
       });
+      console.log(this.chosenRating);
 
       this.enteredName = '';
       this.chosenRating = null;
