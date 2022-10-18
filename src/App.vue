@@ -24,11 +24,8 @@ routerView( v-slot="{ Component }" )
    }
 }
 
-.slide-fade-enter-active {
-   transition: 0.3s;
-}
 
-.slide-fade-leave-active {
+.slide-fade-leave-active, .slide-fade-enter-active {
    transition: 0.3s;
 }
 

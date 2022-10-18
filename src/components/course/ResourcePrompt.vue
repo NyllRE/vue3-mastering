@@ -28,7 +28,7 @@ BasePrompt.prompt(
          submit-label="submit"
          ref="myForm"
          :actions="false"
-         @submit="submitHandler"
+         @submit.prevent="submitHandler"
 
       )
          FormKit(

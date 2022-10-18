@@ -1,10 +1,11 @@
 
 <script lang="ts" setup>
 
-import { ref } from 'vue'
+import { ref, type Ref } from 'vue'
 import ResourceItem from '#/course/ResourceItem.vue'
 import { useVariableStore } from '@/stores/vars'
 import ResourcePrompt from '#/course/ResourcePrompt.vue'
+import type { ArrowFunctionExpression } from '@babel/types';
 
 
 useVariableStore().change('Resources Project - Vue Course')
@@ -13,7 +14,7 @@ useVariableStore().change('Resources Project - Vue Course')
 // const resources = ref(storedResources.get)
 // console.log(storedResources.get);
 
-const resources = ref([
+const resources: Ref = ref([
   {
     id: 'vue',
     title: 'Vue Guide',
@@ -28,7 +29,7 @@ const resources = ref([
   }
 ])
 
-const prompt = ref(false)
+const prompt: Ref = ref(false)
 
 
 const togglePrompt = () => {
@@ -38,7 +39,7 @@ const togglePrompt = () => {
 const addResource = (data: formData) => {
   togglePrompt()
   resources.value.push({
-    id: data.name,
+    id: new Date().toISOString(),
     title: data.name,
     description: data.description,
     link: data.url
@@ -98,8 +99,8 @@ ul {
 
   li {
     list-style-type: none;
-    
-    .center {
+
+    &.center {
       margin: 0 auto;
       text-align: center;
       width: 50%;
@@ -110,7 +111,7 @@ ul {
         transform: scale(.8);
 
         &:hover {
-          background: rgb(133, 133, 133);
+          background: #858585;
           border: 1px solid #0000;
           color: black;
         }

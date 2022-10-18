@@ -16,6 +16,7 @@ header
       nav
          RouterLink( to="/help" ) help
          RouterLink( to="/course" ) Course 
+         RouterLink( to="/survey" ) Survey 
 
 </template>
 
