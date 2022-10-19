@@ -19,7 +19,7 @@
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import SurveyResult from './SurveyResult.vue';
 import axios from 'axios'
 
@@ -30,11 +30,7 @@ export default {
   },
   data() {
     return {
-      experiences: [{
-        id: Number,
-        name: String,
-        rating: String
-      }],
+      experiences: [],
       isLoading: 0,
       err: null,
       updated: this.update
