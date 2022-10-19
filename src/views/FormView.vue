@@ -1,7 +1,7 @@
 <template lang="pug">
 
-learning-survey
-user-experiences
+learning-survey( @pushed="update" )
+user-experiences( :update="newResults" )
 
 
 </template>
@@ -14,6 +14,19 @@ export default {
   components: {
     LearningSurvey,
     UserExperiences,
+  },
+  data() {
+    return {
+      newResults: [],
+    }
+  },
+  methods: {
+    update() {
+      this.newResults.push(1)
+    }
+  },
+  mounted() {
+    this.newResults.push(1)
   },
 };
 </script>

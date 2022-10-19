@@ -33,6 +33,7 @@ export default {
       invalidInput: false,
     };
   },
+  emits: ["pushed"],
   methods: {
     submitSurvey() {
       if (this.enteredName === '' || !this.chosenRating) {
@@ -46,10 +47,10 @@ export default {
         name: this.enteredName,
         rating: this.chosenRating,
       });
-      console.log(this.chosenRating);
 
       this.enteredName = '';
       this.chosenRating = null;
+      this.$emit('pushed')
     },
   },
 };
