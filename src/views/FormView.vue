@@ -1,7 +1,8 @@
 <template lang="pug">
 
-learning-survey( @pushed="update" )
-user-experiences( :update="newResults" )
+.container
+  learning-survey( @pushed="update" )
+  user-experiences( :update="newResults" )
 
 
 </template>

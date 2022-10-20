@@ -1,22 +1,20 @@
 <template>
-  <section>
-    <base-card>
-      <h2>Submitted Experiences</h2> 
-      <!-- <div> >>=> for debugging purposes
-        <base-button @click="loadExperiences">Load Submitted Experiences</base-button>
-      </div> -->
-      <ul>
-        <li v-if="isLoading == 1">Loading...</li>
-        <li v-else-if="isLoading == -1">{{ err }} has occured</li>
-        <survey-result
-          v-for="result in experiences"
-          :key="result.id"
-          :name="result.name"
-          :rating="result.rating"
-        ></survey-result>
-      </ul>
-    </base-card>
-  </section>
+  <BaseCard>
+    <h2>Submitted Experiences</h2> 
+    <!-- <div> >>=> for debugging purposes
+      <base-button @click="loadExperiences">Load Submitted Experiences</base-button>
+    </div> -->
+    <ul>
+      <li v-if="isLoading == 1">Loading...</li>
+      <li v-else-if="isLoading == -1">{{ err }} has occured</li>
+      <survey-result
+        v-for="result in experiences"
+        :key="result.id"
+        :name="result.name"
+        :rating="result.rating"
+      ></survey-result>
+    </ul>
+  </BaseCard>
 </template>
 
 <script>

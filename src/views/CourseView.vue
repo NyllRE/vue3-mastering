@@ -32,8 +32,9 @@ const resources: Ref = ref([
 const prompt: Ref = ref(false)
 
 
-const togglePrompt = () => {
+const togglePrompt = (): void => {
   prompt.value = !prompt.value
+  console.log(prompt.value);
 }
 
 const addResource = (data: formData) => {
@@ -71,20 +72,20 @@ interface formData {
         :key="source.id"
         :source="source")
 
-
-  Transition( name="size-fade" )
-    component(
-      :is="ResourcePrompt"
-      v-if="prompt"
-      @togglePrompt="togglePrompt"
-      @addedResource="addResource"
-    )
+TransitionGroup( name="size-fade" )
+  component(
+    :is="ResourcePrompt"
+    v-if="prompt"
+    @togglePrompt="togglePrompt"
+    @addedResource="addResource"
+  )
 
 </template>
 
 
 
 <style scoped lang="scss">
+
 @media (min-width: 1024px) {
   .container {
     align-items: center;
@@ -95,7 +96,6 @@ ul {
   flex-direction: column;
   justify-content: center;
   height: 65vh;
-  overflow: scroll;
 
   li {
     list-style-type: none;

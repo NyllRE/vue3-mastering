@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import BaseButton from './BaseButton.vue'
+import { Teleport } from 'vue'
 
 
 </script>
@@ -25,7 +26,7 @@ import BaseButton from './BaseButton.vue'
 
 .prompt {
    background: var(--color-background);
-   box-shadow: 0 0 20em 2em #000;
+   box-shadow: 0 0 20em 30em #0009;
 
    border-radius: 0em;
    padding: 2em;
@@ -50,7 +51,7 @@ import BaseButton from './BaseButton.vue'
    }
 
    .content {
-      overflow: scroll;
+      overflow-y: auto;
       height: 70%;
    }
 }
