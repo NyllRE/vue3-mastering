@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HelpView from '../views/HelpView.vue'
+import type ScrollPosition from './index'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,7 +32,15 @@ const router = createRouter({
       path: '/:NotFound(.*)',
       redirect: '/',
     }
-  ]
+  ],
+  // linkActiveClass: 'link-active', //=>> Optional link class name
+  scrollBehavior(to, from, savedPosition) {
+    //=>> saves scroll positions across routes
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { left: 0, top: 0 }
+  }
 })
 
 export default router

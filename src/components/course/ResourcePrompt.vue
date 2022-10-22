@@ -7,8 +7,6 @@ const emit = defineEmits(['addedResource', 'togglePrompt'])
 const submitHandler = (data: object) => {
    emit('addedResource', data)
 }
-
-
 </script>
 
 <template lang="pug">

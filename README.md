@@ -1,10 +1,11 @@
 # vue3-mastering
 
 - [ ] learn Vitest and use it to make tests
-- [X] finish the `resources project` from the [udemy course](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
-- [X] learn pinia
+- [x] finish the `resources project` from the [udemy course](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
+- [x] learn pinia
 - [ ] learn how to implement authentication
 - [ ] fix light mode contrast ratio
+- [-] Router Lifecycle
 
 
 ## useful for later

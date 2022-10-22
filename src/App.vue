@@ -16,13 +16,6 @@ routerView( v-slot="{ Component }" )
 
 <style lang="scss">
 
-@media (min-width: 1024px) {
-   .slot-holder {
-      width: 40vw;
-   }
-}
-
-
 .slide-fade-leave-active, .slide-fade-enter-active {
    transition: 0.3s;
 }
@@ -38,4 +31,27 @@ routerView( v-slot="{ Component }" )
    transform: scale(1.1);
    opacity: 0;
 }
+
+@media (min-width: 1024px) {
+   .slot-holder {
+      width: 40vw;
+   }
+}
+
+@media (max-width: 1024px) {
+   .slide-fade-leave-active, .slide-fade-enter-active {
+      transition: 0.3s;
+   }
+
+   .slide-fade-leave-to {
+      transform: translateX(20px);
+      opacity: 0;
+   }
+
+   .slide-fade-enter-from {
+      transform: translateX(-20px);
+      opacity: 0;
+   }
+}
+
 </style>
