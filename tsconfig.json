@@ -1,5 +1,10 @@
 {
   "files": [],
+  "vueCompilerOptions": {
+    "plugins": [
+      "@volar/vue-language-plugin-pug"
+    ]
+  },
   "compilerOptions": {
     "allowJs": true,
   },

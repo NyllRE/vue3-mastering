@@ -10,5 +10,10 @@
       "@/*": ["./src/*"],
       "#/*": ["./src/components/*"],
     }
-  }
+  },
+  "vueCompilerOptions": {
+    "plugins": [
+      "@volar/vue-language-plugin-pug"
+    ]
+  },
 }

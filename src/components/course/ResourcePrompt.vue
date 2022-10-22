@@ -19,16 +19,15 @@ BasePrompt.prompt(
    template( #headers )
       h1 Add Resource
       p type in the resource and specify what it is for exactly
-
       hr
 
    .form
       FormKit(
-         type="form"
+         type="form" 
          submit-label="submit"
          ref="myForm"
          :actions="false"
-         @submit.prevent="submitHandler"
+         @submit="submitHandler"
 
       )
          FormKit(

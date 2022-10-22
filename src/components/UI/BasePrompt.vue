@@ -41,11 +41,12 @@ import { Teleport } from 'vue'
    // overflow: scroll;
 
    .btn {
-      float: right
+      float: right;
+      z-index: 1;
    }
 
    .base-data {
-      width: 90%;
+      width: 100%;
       height: 30%;
       position: sticky; 
    }

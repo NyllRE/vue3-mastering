@@ -7,12 +7,10 @@ import TheHeader from '#/UI/TheHeader.vue'
 
 <template lang="pug">
 
-TheHeader
-
 routerView( v-slot="{ Component }" )
-  transition( name='slide-fade' mode='out-in' )
-    component.slot-holder( :is="Component" )
-
+   TheHeader
+   transition( name='slide-fade' mode='out-in' )
+      component.slot-holder( :is="Component" )
 
 </template>
 
@@ -30,12 +28,14 @@ routerView( v-slot="{ Component }" )
 }
 
 .slide-fade-leave-to {
-   transform: translateX(20px);
+   // transform: translateY(-20px);
+   transform: scale(.9);
    opacity: 0;
 }
 
 .slide-fade-enter-from {
-  transform: translateX(-20px);
+//   transform: translateY(20px);
+   transform: scale(1.1);
    opacity: 0;
 }
 </style>

@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, ref, type Ref } from 'vue'
 import { createPinia } from 'pinia'
 import { plugin, defaultConfig } from '@formkit/vue'
 import { createAutoAnimatePlugin } from '@formkit/addons'

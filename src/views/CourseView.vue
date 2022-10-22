@@ -14,7 +14,7 @@ useVariableStore().change('Resources Project - Vue Course')
 // const resources = ref(storedResources.get)
 // console.log(storedResources.get);
 
-const resources: Ref = ref([
+const resources = ref([
   {
     id: 'vue',
     title: 'Vue Guide',
@@ -30,6 +30,8 @@ const resources: Ref = ref([
 ])
 
 const prompt: Ref = ref(false)
+
+const theme = ref(localStorage.getItem('vueuse-color-scheme'))
 
 
 const togglePrompt = (): void => {
@@ -63,7 +65,7 @@ interface formData {
   ul
     li.center
       BaseCard.card( @click="togglePrompt" )
-        .plus +
+        .plus + {{ theme}}
 
     TransitionGroup( name="slide-fade-right" )
       component(
@@ -72,13 +74,13 @@ interface formData {
         :key="source.id"
         :source="source")
 
-TransitionGroup( name="size-fade" )
-  component(
-    :is="ResourcePrompt"
-    v-if="prompt"
-    @togglePrompt="togglePrompt"
-    @addedResource="addResource"
-  )
+  TransitionGroup( name="size-fade" )
+    component(
+      :is="ResourcePrompt"
+      v-if="prompt"
+      @togglePrompt="togglePrompt"
+      @addedResource="addResource"
+    )
 
 </template>
 

@@ -5,6 +5,10 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      redirect: '/help'
+    },
+    {
       path: '/help',
       name: 'help',
       component: HelpView
@@ -21,6 +25,10 @@ const router = createRouter({
       path: '/survey',
       name: 'survey',
       component: () => import('../views/FormView.vue'),
+    },
+    {
+      path: '/:NotFound(.*)',
+      redirect: '/',
     }
   ]
 })

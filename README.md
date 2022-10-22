@@ -1,10 +1,16 @@
 # vue3-mastering
 
 - [ ] learn Vitest and use it to make tests
-- [ ] finish the `resources project` from the [udemy course](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
-- [ ] learn pinia
+- [X] finish the `resources project` from the [udemy course](https://www.udemy.com/course/vuejs-2-the-complete-guide/)
+- [X] learn pinia
 - [ ] learn how to implement authentication
 - [ ] fix light mode contrast ratio
+
+
+## useful for later
+
+- [ ] nested routes __lesson 178 on the vue course__
+
 
 ## Recommended IDE Setup
 
