@@ -31,12 +31,9 @@ const resources = ref([
 
 const prompt: Ref = ref(false)
 
-const theme = ref(localStorage.getItem('vueuse-color-scheme'))
-
 
 const togglePrompt = (): void => {
   prompt.value = !prompt.value
-  console.log(prompt.value);
 }
 
 const addResource = (data: formData) => {
@@ -65,7 +62,7 @@ interface formData {
   ul
     li.center
       BaseCard.card( @click="togglePrompt" )
-        .plus + {{ theme}}
+        .plus +
 
     TransitionGroup( name="slide-fade-right" )
       component(

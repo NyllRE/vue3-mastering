@@ -26,7 +26,12 @@ header
 header {
    line-height: 1.5;
    max-height: 100vh;
-
+   position: sticky;
+   top: 0rem;
+   background: #fff1;
+   backdrop-filter: blur(3px);
+   z-index: 99;
+   
    .wrapper {
       height: 16vh;
    }
