@@ -32,43 +32,46 @@ header {
    backdrop-filter: blur(3px);
    z-index: 99;
    
+   @media (prefers-color-scheme: dark) {
+      background: #0001
+   }
+   
    .wrapper {
       height: 16vh;
+
+      h1 {
+         display:block;
+         width: 100%;
+         text-align: center;
+      }
    }
-}
+   nav {
+      width: auto;
+      font-size: 12px;
+      text-align: center;
+      margin: 1em 0;
 
-.logo {
-   display: block;
-   margin: 0 auto 2rem;
-}
-h1 {
-   display:block;
-   width: 100%;
-   text-align: center;
-}
-nav {
-   width: auto;
-   font-size: 12px;
-   text-align: center;
-   margin: 1em 0;
-}
+      a {
+         display: inline-block;
+         padding: 0 1rem;
+         border-left: 2px solid var(--color-border);
 
-nav a.router-link-exact-active {
-   color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-   background-color: transparent;
-}
-
-nav a {
-   display: inline-block;
-   padding: 0 1rem;
-   border-left: 2px solid var(--color-border);
-}
-
-nav a:first-of-type {
-   border: 0;
+         &:first-of-type {
+            border: 0;
+         }
+         &.router-link-exact-active {
+            color: var(--color-text);
+   
+            &:hover {
+              background-color: transparent;
+           }
+         }
+      }
+      
+   }
+   
+   
+   
 }
 
 @media (min-width: 1024px) {
