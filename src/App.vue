@@ -32,6 +32,11 @@ routerView( v-slot="{ Component }" )
    opacity: 0;
 }
 
+.slot-holder {
+   width: 90vw;
+   margin: 0 auto;
+}
+
 @media (min-width: 1024px) {
    .slot-holder {
       width: 40vw;

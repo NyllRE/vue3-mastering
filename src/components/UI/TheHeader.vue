@@ -27,7 +27,8 @@ header {
    line-height: 1.5;
    max-height: 100vh;
    position: sticky;
-   top: 0rem;
+   top: 0;
+   padding: 1rem 0;
    background: #fff1;
    backdrop-filter: blur(3px);
    z-index: 99;
@@ -37,8 +38,6 @@ header {
    }
    
    .wrapper {
-      height: 16vh;
-
       h1 {
          display:block;
          width: 100%;
@@ -54,14 +53,18 @@ header {
       a {
          display: inline-block;
          padding: 0 1rem;
-         border-left: 2px solid var(--color-border);
+         border-left: 2px solid var(--color-border); //=> these act like separators
 
+         //=> this will remove the first border of the nav links
+         //=>> this way the borders looks like separators
          &:first-of-type {
             border: 0;
          }
+
          &.router-link-exact-active {
             color: var(--color-text);
    
+            //=> keeps the active link bg "inactive" visually
             &:hover {
               background-color: transparent;
            }
@@ -82,13 +85,9 @@ header {
       /* padding-right: calc((var(--section-gap) / 2) - 3em); */
    }
 
-   .logo {
-      margin: 0 2rem 0 0;
-   }
-
    header {
       display: flex;
-      /* place-items: flex-start; */
+      place-items: flex-start;
       flex-wrap: wrap;
    }
 
