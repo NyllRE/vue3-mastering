@@ -21,13 +21,11 @@ routerView( v-slot="{ Component }" )
 }
 
 .slide-fade-leave-to {
-   // transform: translateY(-20px);
    transform: scale(.9);
    opacity: 0;
 }
 
 .slide-fade-enter-from {
-//   transform: translateY(20px);
    transform: scale(1.1);
    opacity: 0;
 }

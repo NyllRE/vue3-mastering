@@ -82,7 +82,6 @@ header {
       display: flex;
       place-items: center;
       width: 40vw;
-      /* padding-right: calc((var(--section-gap) / 2) - 3em); */
    }
 
    header {
@@ -93,11 +92,9 @@ header {
 
    nav {
       text-align: center;
-      /* margin-left: -1rem; */
       font-size: 1rem;
 
       padding: 1rem 0;
-      /* margin-top: 1rem; */
    }
 }
 </style>
