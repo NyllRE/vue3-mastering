@@ -32,7 +32,7 @@ button {
 
 <template lang="pug">
 
-button( :class="mode || light-blue" )
+button( :class="mode || 'light-blue'" )
    slot
 
 </template>
