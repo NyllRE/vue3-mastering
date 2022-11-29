@@ -39,8 +39,15 @@ li
 <script lang="ts" setup>
 import { provide, ref } from 'vue'
 
-const props = defineProps(['source'])
-const title = ref(props.source.title)
+const props = defineProps<{
+   source: {
+      title: string,
+      description: string,
+      link: string
+   }
+}>()
+
+const title = ref<string>(props.source.title)
 provide('title', title)
 
 

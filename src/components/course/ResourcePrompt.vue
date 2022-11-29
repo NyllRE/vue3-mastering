@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import type { formData } from '../../types'
 import BasePrompt from '../UI/BasePrompt.vue';
 
-const { prompt } = defineProps(['prompt'])
+const { prompt } = defineProps<{
+   prompt: boolean
+}>()
+
 const emit = defineEmits(['addedResource', 'togglePrompt'])
-const submitHandler = (data: object) => {
+const submitHandler = (data: formData) => {
    emit('addedResource', data)
 }
 </script>
