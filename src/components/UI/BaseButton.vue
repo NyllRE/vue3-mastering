@@ -38,7 +38,11 @@ button( :class="mode || 'light-blue'" )
 </template>
 
 <script lang="ts" setup>
+import { defineProps } from 'vue';
 
-const props = defineProps(['mode'])
+
+const props = defineProps<{
+   mode: string
+}>()
 
 </script>
