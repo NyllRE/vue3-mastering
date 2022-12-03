@@ -46,6 +46,7 @@ section
             max="5"
             :help="'Rating: ' + value"
          )
+         StarRating
 
          FormKit(
             name="submit"
@@ -55,8 +56,9 @@ section
 
 </template>
 
-<script>
+<script lang="ts">
 import axios from 'axios'
+import StarRating from './StarRating.vue';
 export default {
   data() {
     return {
@@ -74,7 +76,7 @@ export default {
       // });
 
       this.enteredName = '';
-      this.chosenRating = 3;
+      this.value = 3;
       // this.$emit('pushed')
     },
   },
