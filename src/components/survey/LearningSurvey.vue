@@ -1,6 +1,6 @@
 <template lang="pug">
 
-section
+section#learning-survey
   BaseCard
     h2 How was you learning experience?
     //-
@@ -42,6 +42,7 @@ section
             label="How likely would you suggest this course to others?"
             v-model="value"
             type="range"
+            step=".5"
             min="1"
             max="5"
             :help="'Rating: ' + value"
@@ -84,8 +85,10 @@ export default {
 </script>
 
 <style lang="scss">
-
-.learning-survey .formkit-help {
+#learning-survey h2 {
+  font-weight: 700;
+}
+.learning-survey * {
   color: var(--color-text)
 }
 
