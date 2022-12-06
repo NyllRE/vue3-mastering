@@ -24,13 +24,18 @@ export const resourcesStore = defineStore({
       get: (state) => state.list
    },
    actions: {
-      add(value: any) {
+      add(value: listObject) {
          this.list.concat( value )
       }
    }
 })
 
-
+interface listObject {
+   id: string,
+   title: string,
+   description: string,
+   link: string
+}
 interface Obj {
    state: {
       list: {
