@@ -23,11 +23,11 @@ export const resourcesStore = defineStore({
    getters: {
       get: (state) => state.list
    },
-   // actions: {
-   //    add(value: object) {
-   //       this.list += value
-   //    }
-   // }
+   actions: {
+      add(value: any) {
+         this.list.concat( value )
+      }
+   }
 })
 
 

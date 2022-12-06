@@ -11,6 +11,7 @@ for (let i: any = 0; i < star.length; i++) {
 }
 </script>
 
+
 <template lang="pug">
 
 fieldset.rating
