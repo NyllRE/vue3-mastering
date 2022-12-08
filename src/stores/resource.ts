@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 
+
 export const resourcesStore = defineStore({
    id: 'resources',
    state: () => {
       return {
-         list: [
+         list: <listObject[]>[
             {
                id: 'vue',
                title: 'Vue Guide',
@@ -35,14 +36,4 @@ interface listObject {
    title: string,
    description: string,
    link: string
-}
-interface Obj {
-   state: {
-      list: {
-         id: string,
-         title: string,
-         description: string,
-         link: string
-      }[]
-   }
 }
