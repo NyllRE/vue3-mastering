@@ -20,7 +20,7 @@ createApp(App)
       plugins: [
          createAutoAnimatePlugin({
             duration: 100,
-            easing: "ease-in"
+            easing: "ease-in-out"
          })
       ]
    }) )
